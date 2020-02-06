@@ -24,8 +24,6 @@ node {
     }
 
     stage('Run image') {
-        docker.image('jenkins-test').withRun('-p 8000:8000') {
-            /* do things */
-        }
+        sh('docker run -d -p 8000:8000 jenkins-test')
     }
 }
